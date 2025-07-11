@@ -1,0 +1,95 @@
+@use 'mixin';
+@use 'variable';
+
+
+.header {
+  @include mixin.layout(variable.$navy);
+  overflow: hidden;
+
+  &__box {
+    background-color: variable.$white;
+    width: 160px;
+    height: 60px;
+    float: right;
+    margin: 20px 20px 0 0;
+    display: flex;
+
+
+
+    & > ul {
+      width: 40px;
+      height: 40px;
+      margin: 10px 0 0 10px;
+      padding-left: 0px;
+
+      // $classNames: 'purple', 'orange', 'blue';
+      // $buttonColor: #a9004b, #ff863f, #0000ff;
+
+      @each $names in variable.$classNames {
+        $index_key: index(variable.$classNames, $names);
+
+        &.header__box__#{$names} {
+          background-color: nth(variable.$buttonColor, $index_key);
+        }
+      }
+    }
+
+  }
+
+}
+
+.main {
+  background-color: variable.$red;
+  height: 250px;
+  width: 400px;
+  display: flex;
+
+  &__sidebar {
+    display: block;
+    width: 150px;
+    background-color: variable.$green;
+  }
+
+  &__box {
+    // height: 170px;
+    // width: 160px;
+    margin: 40px 0 0 40px;
+    display: block;
+    // margin: 0px;
+
+    & > ul {
+      display: flex;
+      width: 150px;
+      height: 50px;
+      padding-left: 0px;
+      list-style: none;
+      margin: 0 0 10px 0 ;
+      background-color: variable.$white;
+
+      & > li {
+        display: flex;
+        width: 140px;
+        height: 40px;
+        margin: 5px 5px 5px 5px;
+        
+        @each $names in variable.$classNames {
+          $index_key: index(variable.$classNames, $names);
+
+          &.main__box__#{$names} {
+            background-color: nth(variable.$buttonColor, $index_key);
+        }
+      }
+
+      }
+
+    }
+
+  }
+
+
+}
+
+
+.footer {
+  @include mixin.layout(variable.$brown);
+}
