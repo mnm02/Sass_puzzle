@@ -22,8 +22,6 @@
       margin: 10px 0 0 10px;
       padding-left: 0px;
 
-      // $classNames: 'purple', 'orange', 'blue';
-      // $buttonColor: #a9004b, #ff863f, #0000ff;
 
       @each $names in variable.$classNames {
         $index_key: index(variable.$classNames, $names);
@@ -51,11 +49,8 @@
   }
 
   &__box {
-    // height: 170px;
-    // width: 160px;
     margin: 40px 0 0 40px;
     display: block;
-    // margin: 0px;
 
     & > ul {
       display: flex;

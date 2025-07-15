@@ -5,22 +5,3 @@
   width: 400px;
   background-color: $color;
 };
-
-
-// @mixin box() {
-//   $color:purple,orange, blue;
-//   $color-text: variable.$buttonColor;
-
-//   div {
-//     & > ul {
-//       display: flex;
-//       @each $box-color in $color-text {
-//         $index_key: ($color, $box-color);
-
-//         &.header__box__#{$color} {
-//           color: ntn($color-text, $index_key);
-//         }
-//       }
-//     }
-//   }
-// }
