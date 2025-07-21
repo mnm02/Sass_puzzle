@@ -15,18 +15,16 @@
     display: flex;
 
 
-
     & > ul {
       width: 40px;
       height: 40px;
       margin: 10px 0 0 10px;
       padding-left: 0px;
 
+      @each $className in variable.$classNames {
+        $index_key: index(variable.$classNames, $className);
 
-      @each $names in variable.$classNames {
-        $index_key: index(variable.$classNames, $names);
-
-        &.header__box__#{$names} {
+        &.header__box__#{$className} {
           background-color: nth(variable.$buttonColor, $index_key);
         }
       }
@@ -67,10 +65,10 @@
         height: 40px;
         margin: 5px 5px 5px 5px;
         
-        @each $names in variable.$classNames {
-          $index_key: index(variable.$classNames, $names);
+        @each $className in variable.$classNames {
+          $index_key: index(variable.$classNames, $className);
 
-          &.main__box__#{$names} {
+          &.main__box__#{$className} {
             background-color: nth(variable.$buttonColor, $index_key);
         }
       }
