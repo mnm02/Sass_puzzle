@@ -1,0 +1,7 @@
+@use 'variable';
+
+@mixin layout($color) {
+  height: 100px;
+  width: 400px;
+  background-color: $color;
+};
